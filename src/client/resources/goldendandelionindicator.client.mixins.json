@@ -3,7 +3,9 @@
 	"package": "net.karasuniki.gdi.mixin.client",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ExampleClientMixin"
+		"BabyMobEntityMixin",
+		"PlayerMixin",
+		"LevelAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1
