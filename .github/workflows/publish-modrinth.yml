@@ -1,8 +1,14 @@
 name: Publish to Modrinth
 
 on:
-  release:
-    types: [published]
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      changelog:
+        required: true
+        type: string
 
 jobs:
   publish:
@@ -27,11 +33,11 @@ jobs:
         uses: cloudnode-pro/modrinth-publish@v2
         with:
           token: ${{ secrets.MODRINTH_TOKEN }}
-          project: ${{ github.env.MODRINTH_PROJECT_ID }}
-          version: ${{ github.event.release.tag_name }}
+          project: ${{ vars.MODRINTH_PROJECT_ID }}
+          version: ${{ inputs.version }}
           loaders: |
             fabric
           game-versions: |
-            26.1- snapshot-6
-          files: build/libs/goldendandelionindicator-${{ github.event.release.tag_name }}.jar
-          changelog: ${{ github.event.release.body }}
+            26.1-snapshot-6
+          files: build/libs/goldendandelionindicator-${{ inputs.version }}.jar
+          changelog: ${{ inputs.changelog }}
