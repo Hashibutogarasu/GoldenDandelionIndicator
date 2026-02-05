@@ -28,7 +28,7 @@ jobs:
 
   build-and-publish:
     needs: release-please
-    if: ${{ contains(fromJSON(needs.release-please.outputs.paths_released), '.') }}
+    if: ${{ needs.release-please.outputs.release_created }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
