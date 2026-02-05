@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/compare/v1.2.0...v1.3.0) (2026-02-05)
+
+
+### Features
+
+* added publish ([62c2af8](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/commit/62c2af851030a0f40797eb2c2cba63e91f2630fb))
+
 ## [1.2.0](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/compare/v1.1.0...v1.2.0) (2026-02-05)
 
 
