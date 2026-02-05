@@ -50,8 +50,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release upload ${{ needs.release-please.outputs.tag_name }} build/libs/*.jar --clobber
 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-libs
+          path: build/libs/
+
   publish-curseforge:
-    needs: release-please
+    needs: [release-please, build-and-publish]
     if: ${{ needs.release-please.outputs.release_created }}
     uses: ./.github/workflows/publish-curseforge.yml
     with:
@@ -60,7 +66,7 @@ jobs:
     secrets: inherit
 
   publish-modrinth:
-    needs: release-please
+    needs: [release-please, build-and-publish]
     if: ${{ needs.release-please.outputs.release_created }}
     uses: ./.github/workflows/publish-modrinth.yml
     with:
