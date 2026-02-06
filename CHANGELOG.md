@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/compare/v1.3.3...v1.3.4) (2026-02-06)
+
+
+### Bug Fixes
+
+* create release for apply removed mixin ([f19c936](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/commit/f19c93620235af9a9bcab9da5eb6232ab3e865ea))
+
 ## [1.3.3](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/compare/v1.3.2...v1.3.3) (2026-02-05)
 
 
