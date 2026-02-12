@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/compare/v1.3.4...v1.4.0) (2026-02-12)
+
+
+### Features
+
+* updated to snapshot-7 ([f63bfad](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/commit/f63bfad5fb66f207d69414a65c9d601462c02773))
+
+
+### Bug Fixes
+
+* fixed show particle logics ([49e18ad](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/commit/49e18ad9002ce5e63ee39a19367aae8c57f9afc1))
+
 ## [1.3.4](https://github.com/Hashibutogarasu/GoldenDandelionIndicator/compare/v1.3.3...v1.3.4) (2026-02-06)
 
 
