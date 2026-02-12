@@ -15,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Extract Minecraft Version
+        id: extract_version
+        run: |
+          MC_VERSION=$(grep "^minecraft_version=" gradle.properties | cut -d'=' -f2 | tr -d '[:space:]')
+          echo "mc_version=$MC_VERSION" >> $GITHUB_OUTPUT
       
       - name: Download artifacts
         uses: actions/download-artifact@v4
@@ -35,6 +41,6 @@ jobs:
           project: ${{ vars.MODRINTH_PROJECT_ID }}
           version: ${{ inputs.version }}
           loaders: fabric
-          game-versions: 26.1-snapshot-6
+          game-versions: ${{ steps.extract_version.outputs.mc_version }}
           files: ${{ steps.find_jar.outputs.jar_path }}
           changelog: ${{ inputs.changelog }}
