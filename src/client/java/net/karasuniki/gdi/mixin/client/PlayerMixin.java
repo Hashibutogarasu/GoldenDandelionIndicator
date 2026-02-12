@@ -28,7 +28,7 @@ public abstract class PlayerMixin extends LivingEntity {
 
         if (this.getMainHandItem().getItem().equals(Items.GOLDEN_DANDELION.asItem())) {
             this.level().getEntitiesOfClass(Animal.class, this.getBoundingBox().inflate(5.0)).forEach(animal -> {
-                if (animal instanceof IGoldenDandelionMob baby && animal.canAgeUp()) {
+                if (animal instanceof IGoldenDandelionMob baby && !animal.canAgeUp()) {
                     baby.showGoldenParticle();
                 }
             });
